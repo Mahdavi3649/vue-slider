@@ -20,6 +20,7 @@ const app = new Vue({
     el: "#app",
     data: {
         selected: 0,
+        interval: null,
         images: [
             {
                 image: 'img/01.jpg',
@@ -51,7 +52,7 @@ const app = new Vue({
     methods: {
         prevImage(){
             //console.log("previus");
-            if(this.selected == 0){
+            if(this.selected === 0){
                 this.selected = this.images.length;
             }
             this.selected--;
@@ -59,7 +60,7 @@ const app = new Vue({
         nextImage(){
             //console.log("next");
             this.selected++;
-            if(this.selected = this.images.length){
+            if(this.selected === this.images.length){
                 this.selected = 0;
             }
         }
