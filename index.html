@@ -26,7 +26,7 @@
                 </div>
 
                 <!-- thumbnails images -->
-                <div class="thumbnails">
+                <div class="thumbnails" @mouseover="stopInterval" @mouseleave="startInterval">
                     <!-- navigator -->
                     <div class="navigator">
                         <!-- prev -->
@@ -38,7 +38,7 @@
                             <i class="fa-solid fa-chevron-circle-down"></i>
                         </div>
 
-                    <img :src="thumb.image" class="thumb"  v-for="(thumb,index) in images" :class="selected === index ? 'active' : '' ">
+                    <img :src="thumb.image" class="thumb"  v-for="(thumb,index) in images" :class="selected === index ? 'active' : ''" @click="imgClick(index)">
                 </div>
             </div>
         </div>

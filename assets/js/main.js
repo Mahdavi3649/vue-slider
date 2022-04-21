@@ -63,6 +63,16 @@ const app = new Vue({
             if(this.selected === this.images.length){
                 this.selected = 0;
             }
+        },
+        startInterval: function () {
+            this.interval = setInterval(this.nextImage, 3000);
+        },
+        stopInterval: function () {
+            clearInterval(this.interval);
+        },
+        imgClick(index) {
+            this.selected = index;
         }
     }
+
 }) 
