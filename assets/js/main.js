@@ -47,5 +47,21 @@ const app = new Vue({
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis.',
             }
         ]
+    },
+    methods: {
+        prevImage(){
+            //console.log("previus");
+            if(this.selected == 0){
+                this.selected = this.images.length;
+            }
+            this.selected--;
+        },
+        nextImage(){
+            //console.log("next");
+            this.selected++;
+            if(this.selected = this.images.length){
+                this.selected = 0;
+            }
+        }
     }
 }) 
